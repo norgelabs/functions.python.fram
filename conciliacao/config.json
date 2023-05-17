@@ -1,0 +1,22 @@
+{
+    "share_point": 
+        {
+            "user": "",
+            "password": "",
+            "url": "",
+            "site": "",
+            "doc_library": ""
+        },
+    
+    "main": 
+        {
+            "sharepoint_user": "",
+            "sharepoint_password": "",
+            "sharepoint_base_url": "",
+            "folder_in_sharepoint": "",
+            "folder_recon_carteiras": "",
+            "connection_string":"",
+            "security_token":"",
+            "endpoint_send_file": ""
+        }
+}
