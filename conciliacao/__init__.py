@@ -32,14 +32,14 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         config = json.load(config_file)
         config = config['main']
 
-    sharepoint_base_url = config['sharepoint_base_url']
-    sharepoint_user = config['sharepoint_user']
-    sharepoint_password = config['sharepoint_password']
-    folder_in_sharepoint = config['folder_in_sharepoint']
-    folder_recon_carteiras = config['folder_recon_carteiras']
-    connection_string = config['connection_string']
-    security_token = config['security_token']
-    endpoint_send_file = config['endpoint_send_file']
+    sharepoint_base_url = config['sharepointBaseUrl']
+    sharepoint_user = config['sharepointUser']
+    sharepoint_password = config['sharepointPassword']
+    folder_in_sharepoint = config['folderInSharepoint']
+    folder_recon_carteiras = config['folderReconCarteiras']
+    connection_string = config['connectionString']
+    security_token = config['securityToken']
+    endpoint_send_file = config['endpointSendFile']
 
     #Constructing Details For Authenticating SharePoint
 
