@@ -1,22 +1,13 @@
 {
-    "share_point": 
-        {
-            "user": "",
-            "password": "",
-            "url": "",
-            "site": "",
-            "doc_library": ""
-        },
-    
     "main": 
         {
-            "sharepoint_user": "",
-            "sharepoint_password": "",
-            "sharepoint_base_url": "",
-            "folder_in_sharepoint": "",
-            "folder_recon_carteiras": "",
-            "connection_string":"",
-            "security_token":"",
-            "endpoint_send_file": ""
+            "sharepoint_user": "schettini@ivoschettini.onmicrosoft.com",
+            "sharepoint_password": "password",
+            "sharepoint_base_url": "https://ivoschettini.sharepoint.com/sites/EquipeTeste/",
+            "folder_in_sharepoint": "/sites/EquipeTeste/Shared%20Documents/principal/arquivos_B3/",
+            "folder_recon_carteiras": "/sites/EquipeTeste/Shared%20Documents/principal/recon_carteiras/",
+            "connection_string":"Driver={ODBC Driver 17 for SQL Server};Server=10.1.231.106;Database=FINANCIAL_FRAMCAPITAL;UID=userfram;PWD=Help123!@#;",
+            "security_token":"420B941F-44D3-4CA6-9C34-FB5AD07B244B",
+            "endpoint_send_file": "https://prod-96.westus.logic.azure.com:443/workflows/d64705ecb48f45a7831d00aa97a06540/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=WVonW6ICbt3U5_Jtt6SkNE2-tBUD2tSKTUNN98Op8IQ"
         }
 }

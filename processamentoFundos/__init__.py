@@ -24,47 +24,47 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     # read config file
     with open(config_path) as config_file:
         config = json.load(config_file)
-        config = config['procFundos']
+        # config = config['procFundos']
 
-    token = config['token']
-    url = config['url']
-    destination_phase_id = config['destination_phase_id']
-    phase_processamento = config['phase_processamento']
-    phase_concluido = config['phase_concluido']
+    token = config['PrcFundosToken']
+    url = config['PrcFundosUrl']
+    destination_phase_id = config['PrcFundosDestinationPhaseId']
+    phase_processamento = config['PrcFundosPhaseProcessamento']
+    phase_concluido = config['PrcFundosPhaseConcluido']
+    connection_string = config['PrcFundosConnectionString']
 
-    # data_JSON =  """
-    #     {
-    #         "data":{
-    #             "action":"card.move",
-    #             "from":{
-    #                 "id":318519969,
-    #                 "name":"Abertura"
-    #             },
-    #             "to":{
-    #                 "id":318519204,
-    #                 "name":"Processamento"
-    #             },
-    #             "moved_by":{
-    #                 "id":120,
-    #                 "name":"Pipebot",
-    #                 "username":"pipebot",
-    #                 "email":"pipebot@pipefy.com",
-    #                 "avatar_url":"https://gravatar.com/avatar/18df131953ca09a802848bf3f8dbf83b.png?s=144&d=https://pipestyle.staticpipefy.com/v2-temp/illustrations/avatar.png"
-    #             },
-    #             "card":{
-    #                 "id":726989094,
-    #                 "title":"187",
-    #                 "pipe_id":"187"
-    #             }
-    #         }
-    #     }
-    #     """
+    data_JSON =  """
+        {
+            "data":{
+                "action":"card.move",
+                "from":{
+                    "id":318519969,
+                    "name":"Abertura"
+                },
+                "to":{
+                    "id":318519204,
+                    "name":"Processamento"
+                },
+                "moved_by":{
+                    "id":120,
+                    "name":"Pipebot",
+                    "username":"pipebot",
+                    "email":"pipebot@pipefy.com",
+                    "avatar_url":"https://gravatar.com/avatar/18df131953ca09a802848bf3f8dbf83b.png?s=144&d=https://pipestyle.staticpipefy.com/v2-temp/illustrations/avatar.png"
+                },
+                "card":{
+                    "id":726989094,
+                    "title":"187",
+                    "pipe_id":"187"
+                }
+            }
+        }
+        """
 
     req_body = req.get_json()
     # config = json.loads(data_JSON)
     print(req_body["data"]["to"]["id"])
 
-    # return "oi"
     # dados_fundo = config["data"]
     dados_fundo = req_body["data"]
 
@@ -108,14 +108,9 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return req.text
 
     if dados_fundo["to"]["id"] == phase_processamento:
-        print(">>>>> validado!!!")
+        print(">>>>> CARD movido para Processamento")
 
-        cnxn = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};"
-                        "Server=10.1.231.106;"
-                        "Database=FINANCIAL_FRAMCAPITAL;"
-                        "UID=userfram;"
-                        "PWD=Help123!@#;")
-
+        cnxn = pyodbc.connect(connection_string)
         cursor = cnxn.cursor()
 
         Fundo = dados_fundo["card"]
