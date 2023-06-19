@@ -18,20 +18,14 @@ import azure.functions as func
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-    config_path = '\\'.join([ROOT_DIR, 'config.json'])
-
-    # read config file
-    with open(config_path) as config_file:
-        config = json.load(config_file)
-        # config = config['procFundos']
-
     token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQaXBlZnkiLCJpYXQiOjE2ODMwNTYyMDUsImp0aSI6IjY4N2FmNzZmLTlhYmItNDNkYi1hNDFmLWNmNmM4M2VhYjhlNyIsInN1YiI6MzAyMTM0NDk5LCJ1c2VyIjp7ImlkIjozMDIxMzQ0OTksImVtYWlsIjoicmFuaWVyZS5zYW50b3NAbm9yZ2VsYWJzLmNvbSIsImFwcGxpY2F0aW9uIjozMDAyNDcyMzIsInNjb3BlcyI6W119LCJpbnRlcmZhY2VfdXVpZCI6bnVsbH0.qxZLyCxvlt_o3qV0rJ9F2J58paJ0WbB2_HHLumLjZuscC_Nbp_tg349Xrk5MqfI0-XmXhZzbspjDG372qvSniw"
     url = "https://api.pipefy.com/graphql"
     destination_phase_id = 318519205
     phase_processamento = 318519204
     phase_concluido = 318519206
     connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=10.1.231.106;Database=FINANCIAL_FRAMCAPITAL;UID=userfram;PWD=Help123!@#;"
+
+
 
     data_JSON =  """
         {
