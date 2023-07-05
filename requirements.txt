@@ -6,7 +6,6 @@ azure-functions
 pandas
 pyodbc
 numpy
-build_table
 requests
 json
 os
