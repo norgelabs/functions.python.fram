@@ -2,13 +2,7 @@ import logging
 
 import pandas as pd
 import pyodbc  
-import re
 import numpy as np
-import time
-import datetime
-from email.mime.text import MIMEText
-import win32com.client as win32
-from pretty_html_table import build_table
 import requests
 import json
 import os
