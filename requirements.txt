@@ -7,5 +7,4 @@ pandas
 pyodbc
 numpy
 requests
-json
 os
