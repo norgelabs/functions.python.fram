@@ -3,3 +3,15 @@
 # Manually managing azure-functions-worker may cause unexpected issues
 
 azure-functions
+pandas
+pyodbc  
+re
+numpy
+time
+datetime
+MIMEText
+win32
+build_table
+requests
+json
+os
