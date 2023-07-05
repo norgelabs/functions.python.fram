@@ -4,13 +4,8 @@
 
 azure-functions
 pandas
-pyodbc  
-re
+pyodbc
 numpy
-time
-datetime
-MIMEText
-win32
 build_table
 requests
 json
