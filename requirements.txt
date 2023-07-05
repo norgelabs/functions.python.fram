@@ -7,3 +7,4 @@ pandas
 pyodbc
 numpy
 requests
+win32com
