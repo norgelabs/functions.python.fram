@@ -17,7 +17,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     destination_phase_id = 318519205
     phase_processamento = 318519204
     phase_concluido = 318519206
-    connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=10.1.231.106;Database=FINANCIAL_FRAMCAPITAL;UID=userfram;PWD=Help123!@#;"
+    # connection_string = "Driver={ODBC Driver 17 for SQL Server};Server=10.1.231.106;Database=FINANCIAL_FRAMCAPITAL;UID=userfram;PWD=Help123!@#;"
+    connection_string = "Server=tcp:10.1.231.106;Initial Catalog=FINANCIAL_FRAMCAPITAL;Persist Security Info=False;User ID=userfram;Password=Help123!@#;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=False;Connection Timeout=30;"
 
 
 
