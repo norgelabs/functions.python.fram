@@ -20,9 +20,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     queue_client.message_encode_policy = BinaryBase64EncodePolicy()
     
-    # message_bytes = req_body.encode('utf-8')
+    message_bytes = req_body.encode('utf-8')
+    base64_message = base64.b64encode(message_bytes).decode('utf-8')
+
+    queue_client.send_message(base64_message)
+
     # queue_client.send_message(queue_client.message_encode_policy.encode(content=message_bytes))
-    queue_client.send_message(req_body)
     
     return func.HttpResponse(
             "This HTTP triggered function executed successfully",
