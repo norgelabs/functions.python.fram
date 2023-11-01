@@ -12,7 +12,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 
     connect_str = "DefaultEndpointsProtocol=https;AccountName=functionspythonfram8ffb;AccountKey=a1vrSV+WzPqf0PLv7RlNtRsb0JpOsNOHsTCDuLKoxrh69dIDstM1WgY5ydR5ViyrVgPFPfCxe0a4+ASt+TK9XA==;EndpointSuffix=core.windows.net"
 
-    req_body = str(req.get_body())
+    req_body = req.get_body()
 
     logging.info(req_body)
     
