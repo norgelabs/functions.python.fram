@@ -7,3 +7,5 @@ pandas
 pyodbc
 numpy
 requests
+azure-storage-queue
+azure-identity
